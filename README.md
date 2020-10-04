@@ -2,6 +2,9 @@
 Display the command duration.
 The display is only when the duration exceeds the threshold.
 
+<img width="170" alt="capt" src="https://user-images.githubusercontent.com/1833985/95013194-abea4a80-0679-11eb-9710-14fd29d5fec3.png">
+
+
 ## Installation
 #### Using zplug
 If you use [zplug](https://github.com/zplug/zplug), add the following to your `.zshrc`:
