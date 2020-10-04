@@ -17,17 +17,17 @@ function duration-precmd {
 
     local end_unixtime
     end_unixtime=$( date +%s )
-    local diff_unixtime=$(( end_unixtime - start_unixtime ))
+    local duration=$(( end_unixtime - start_unixtime ))
 
     local threadshold
     threadshold=$(get-threadshold)
-    if [ "$diff_unixtime" -le "$threadshold" ]; then
+    if [ "$duration" -le "$threadshold" ]; then
         return 0
     fi
 
-    local sec=$(( diff_unixtime % 60 ))
-    local min=$(( diff_unixtime % 3600 / 60 ))
-    local hour=$(( diff_unixtime / 3600 ))
+    local sec=$(( duration % 60 ))
+    local min=$(( duration % 3600 / 60 ))
+    local hour=$(( duration / 3600 ))
     printf "Duration: %d:%02d:%02d\n\n" $hour $min $sec
 
     unset start_unixtime
