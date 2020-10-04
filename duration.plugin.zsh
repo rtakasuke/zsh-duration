@@ -1,11 +1,3 @@
-function get-threadshold {
-    if [ "$ZSH_DURATION_THRESHOLD" ]; then
-        echo "$ZSH_DURATION_THRESHOLD"
-    else
-        echo 10
-    fi
-}
-
 function duration-preexec {
     start_unixtime=$( date +%s )
 }
@@ -20,7 +12,12 @@ function duration-precmd {
     local duration=$(( end_unixtime - start_unixtime ))
 
     local threadshold
-    threadshold=$(get-threadshold)
+    if [ "$ZSH_DURATION_THRESHOLD" ]; then
+        threadshold="$ZSH_DURATION_THRESHOLD"
+    else
+        threadshold=10
+    fi
+
     if [ "$duration" -le "$threadshold" ]; then
         return 0
     fi
