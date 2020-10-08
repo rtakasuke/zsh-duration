@@ -1,4 +1,4 @@
-![Lint](https://github.com/rtakasuke/docker-duration/workflows/Lint/badge.svg)
+![Lint](https://github.com/rtakasuke/zsh-duration/workflows/Lint/badge.svg)
 
 # zsh-duration
 Zsh plugin for displays command duration when exceeds threshold.
